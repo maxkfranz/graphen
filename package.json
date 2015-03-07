@@ -5,5 +5,11 @@
   "description": "An add-on that visualises your history as an interactive graph.",
   "author": "Max Franz",
   "license": "MPL 2.0",
-  "version": "1.0"
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^1.1.2",
+    "matchdep": "^0.3.0"
+  }
 }
