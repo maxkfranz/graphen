@@ -1,0 +1,16 @@
+html, body {
+	font: 14px Helvetica Neue, Helvetica, Arial, Lucida Grande, Geneva, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#logo {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -32px;
+	margin-left: -32px;
+	background-image: url('../img/icon-64.png');
+}
