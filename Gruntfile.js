@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     shell: {
       xpi: {
         command: [
-          'cd pluginpath',
           'cfx xpi',
           'wget --post-file=graphen.xpi http://127.0.0.1:8888/ || echo>/dev/null'
         ].join('&&')
@@ -13,7 +12,7 @@ module.exports = function(grunt) {
     },
     watch: {
       xpi: {
-        files: ['pluginpath/**'],
+        files: ['./**'],
         tasks: ['shell:xpi']
       }
     }
