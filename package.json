@@ -1,9 +1,9 @@
 {
   "name": "ff-history-graph",
-  "title": "ff-history-graph",
+  "title": "History Graph",
   "id": "jid1-aJLNuopU0sUVGA",
-  "description": "a basic add-on",
-  "author": "",
+  "description": "An add-on that visualises your history as an interactive graph.",
+  "author": "Max Franz",
   "license": "MPL 2.0",
-  "version": "0.1"
+  "version": "1.0"
 }
