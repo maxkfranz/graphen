@@ -6,6 +6,8 @@ function init( graphenHistory ){
 
   var hist = graphenHistory;
   var eles = [];
+  var nodes = [];
+  var edges = [];
   var lastId = 0;
 
   function makeId(){
@@ -23,16 +25,16 @@ function init( graphenHistory ){
       entry.id = makeId();
 
       // add history node
-      eles.push({
+      nodes.push({
         group: 'nodes',
         data: entry
       });
 
-      if( i > 0  ){
-        eles.push({
+      if( i > 0 ){
+        edges.push({
           group: 'edges',
           data: {
-            source: eles[ eles.length - 2 ].data.id,
+            source: nodes[ nodes.length - 2 ].data.id,
             target: entry.id
           }
         });
@@ -41,6 +43,8 @@ function init( graphenHistory ){
     }
 
   }
+
+  eles = nodes.concat( edges );
 
   var cy = cytoscape({
     container: document.getElementById('cy'),
@@ -54,7 +58,7 @@ function init( graphenHistory ){
         selector: 'node',
         css: {
           'content': 'data(label)',
-          'font-size': 10,
+          'font-size': 8,
           'color': '#888',
           'width': 100,
           'height': 70,
@@ -70,7 +74,7 @@ function init( graphenHistory ){
       {
         selector: 'edge',
         css: {
-          'width': 10,
+          'width': 6,
           'target-arrow-shape': 'triangle',
           'line-color': '#ddd',
           'target-arrow-color': '#ddd',
@@ -80,6 +84,12 @@ function init( graphenHistory ){
     ],
 
     elements: eles
+  });
+
+  cy.on('tap', 'node', function( e ){
+    var node = this;
+
+    window.open( node.data('url') );
   });
 
 }
