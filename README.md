@@ -16,7 +16,7 @@ To build the XPI (add-on installation file):
 cfx xpi
 ```
 
-## Automated deployment
+## Automated Building and Deployment
 
 Install the necessary dev dependencies
 
@@ -32,12 +32,7 @@ Run grunt. This will watch for any file changes and deploy them to firefox.
 grunt
 ```
 
-Build the add-on and it will be automatically deployed.
-
-```
-cfx xpi
-```
-
+Change and save a file and it will be automatically updated. 
 
 ## Testing
 
