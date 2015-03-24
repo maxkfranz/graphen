@@ -4,15 +4,10 @@ function init( graphenHistory ){
 
   body.classList.add('loaded');
 
-  var hist = graphenHistory;
+  var hist = window.graphenHistory = graphenHistory;
   var eles = [];
   var nodes = [];
   var edges = [];
-  var lastId = 0;
-
-  function makeId(){
-    return 'ent' + (++lastId);
-  }
 
   for( var tabId in hist ){
     var tab = hist[ tabId ];
@@ -22,13 +17,22 @@ function init( graphenHistory ){
       var maxLabelLen = 32;
 
       entry.label = moment(entry.time).format('HH:mm') + ' : ' + ( entry.title.length < maxLabelLen ? entry.title : entry.title.substring(0, maxLabelLen) + '...' );
-      entry.id = makeId();
 
       // add history node
       nodes.push({
         group: 'nodes',
         data: entry
       });
+
+      if( entry.fromTab ){
+        edges.push({
+          group: 'edges',
+          data: {
+            source: entry.fromTab,
+            target: entry.id
+          }
+        });
+      }
 
       if( i > 0 ){
         edges.push({
