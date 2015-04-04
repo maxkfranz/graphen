@@ -16,6 +16,23 @@ To build the XPI (add-on installation file):
 cfx xpi
 ```
 
+## Automated Building and Deployment
+
+Install the necessary dev dependencies
+
+```
+node install
+```
+
+Install the [Extension Auto-Installer](https://addons.mozilla.org/en-US/firefox/addon/autoinstaller/).
+
+Run grunt. This will watch for any file changes and deploy them to firefox.
+
+```
+grunt
+```
+
+Change and save a file and it will be automatically updated. 
 
 ## Testing
 
