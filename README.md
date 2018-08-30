@@ -1,5 +1,7 @@
 # Graphen
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/maxkfranz/graphen.svg)](https://greenkeeper.io/)
+
 A Firefox extension to visualise your history as a graph
 
 
